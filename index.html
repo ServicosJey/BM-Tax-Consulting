@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BM Tax Consulting — Asesoría Fiscal, Contabilidad y Cumplimiento DGII</title>
+<meta name="description" content="Asesoría fiscal y contable para personas y empresas en República Dominicana. Declaraciones (ITBIS, ISR, TSS), formatos DGII (606–609, 623, 629), RST, estados e informes financieros. WhatsApp 809-773-5565.">
+<meta name="theme-color" content="#15355a">
+
+<!-- Open Graph -->
+<meta property="og:title" content="BM Tax Consulting — Asesoría Fiscal, Contabilidad y Cumplimiento DGII">
+<meta property="og:description" content="Asesoría fiscal y contable para personas y empresas en RD. Declaraciones y formatos DGII, RST, estados e informes financieros.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://i.postimg.cc/6QvCDd0k/BM-tax.jpg">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* ========= MOBILE-FIRST ========= */
+  :root{
+    --bg:#ffffff;
+    --paper:#f6f7fb;
+    --ink:#222;
+    --muted:#5f6c72;
+    --primary:#15355a;    /* azul oscuro marca */
+    --primary-2:#2b67a1;  /* azul medio de apoyo */
+    --accent:#e5eefb;     /* fondo sutil */
+    --line:rgba(20,20,20,.10);
+
+    --radius:16px;
+    --shadow:0 10px 24px rgba(0,0,0,.08);
+    --shadow-2:0 8px 22px rgba(21,53,90,.20);
+    --trans:.35s cubic-bezier(.2,.8,.2,1);
+  }
+  :root[data-theme="dark"]{
+    --bg:#0f1113;
+    --paper:#161a1d;
+    --ink:#e9eef1;
+    --muted:#9aa7ad;
+    --primary:#2b67a1;
+    --primary-2:#;
+    --accent:#0f1b2b;
+    --line:rgba(255,255,255,.12);
+    --shadow:0 10px 28px rgba(0,0,0,.5);
+    --shadow-2:0 8px 22px rgba(0,0,0,.5);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:"Open Sans",system-ui,Segoe UI,Roboto,Arial}
+  img{max-width:100%;display:block}
+  a{text-decoration:none;color:inherit}
+  button{font-family:inherit}
+
+  .container{width:min(1120px,92%);margin:auto}
+
+  /* ===== Header ===== */
+  header.site-header{
+    position:sticky;top:0;z-index:100;background:color-mix(in srgb, var(--bg) 85%, transparent);
+    backdrop-filter: blur(8px);border-bottom:1px solid var(--line);
+    transition: box-shadow .25s ease, transform .25s ease, background var(--trans);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}
+  .brand{display:flex;align-items:center;gap:10px;min-width:0}
+  .brand img{width:38px;height:38px;border-radius:10px;box-shadow:var(--shadow);flex:0 0 auto}
+  .brand b{font-size:18px}
+  .brand__text{font-weight:700;white-space:nowrap}
+  .brand__text span{color:var(--primary)}
+
+  .nav__actions{display:flex;align-items:center;gap:8px;min-width:0;flex:1;justify-content:flex-end}
+
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:9px 12px;border-radius:999px;border:1px solid var(--line);font-weight:800;line-height:1;height:36px;white-space:nowrap
+  }
+  .btn svg{width:18px;height:18px;fill:currentColor}
+  .btn--ghost{background:rgba(0,0,0,.02)}
+  :root[data-theme="dark"] .btn--ghost{background:rgba(255,255,255,.06)}
+  .btn--icon{width:36px;justify-content:center;padding:0;border-radius:999px}
+  .btn--cta{background:linear-gradient(135deg,var(--primary),var(--primary-2));color:#fff;border:none;box-shadow:var(--shadow-2)}
+  .btn--pill{font-size:14px}
+
+  /* 1 línea en móvil para Horario + modo noche + Cotizar */
+  .btn--cta.flex-1{flex:1 1 auto;justify-content:center}
+  @media (max-width:420px){
+    .nav__actions{gap:6px}
+    .btn{height:34px;padding:8px 10px}
+    .btn--pill{font-size:13px}
+    /* En móviles muy estrechos, el CTA muestra solo ícono */
+    .btn--cta .cta__label{display:none}
+    .btn--cta.flex-1{width:36px;padding:0}
+  }
+
+  header.site-header.is-scrolled{box-shadow:0 10px 24px rgba(0,0,0,.12)}
+
+  /* ===== Hero ===== */
+  .hero{display:grid;grid-template-columns:1fr;gap:16px;align-items:center;padding:22px 0}
+  .pill{display:inline-flex;gap:8px;align-items:center;background:var(--paper);padding:6px 10px;border-radius:999px;border:1px solid var(--line);font-size:12px;color:var(--muted)}
+  h1{font-size:clamp(26px,7vw,40px);line-height:1.14;margin:10px 0}
+  .lead{font-size:15px;color:var(--muted);margin:8px 0 12px}
+  .hero-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+  .hero-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:12px;box-shadow:var(--shadow)}
+  .hero-card img{border-radius:12px}
+
+  /* ===== Sections ===== */
+  section{padding:28px 0}
+  .section-title{margin-bottom:12px}
+  .section-title h2{font-size:clamp(20px,6vw,30px);margin:0}
+  .section-title p{color:var(--muted);margin:4px 0 0}
+
+  /* ===== Cards / grids ===== */
+  .grid-3{display:grid;grid-template-columns:1fr;gap:12px}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow)}
+  .card h3{margin:6px 0 4px;font-size:17px}
+  .muted{color:var(--muted)}
+
+  /* ===== Carousel (mejorado) ===== */
+  .carousel-wrap{position:relative}
+  .carousel{
+    overflow:hidden;border-radius:var(--radius);border:1px solid var(--line);background:var(--paper);box-shadow:var(--shadow);
+    touch-action: pan-y pinch-zoom; overscroll-behavior: contain; /* mejor scroll en móvil */
+  }
+  .track{display:flex;transition:transform .6s cubic-bezier(.22,.61,.36,1);will-change:transform}
+  .slide{min-width:100%;display:grid;grid-template-columns:1fr;gap:10px;align-items:center;padding:12px}
+  .slide img{width:100%;height:210px;object-fit:cover;border-radius:12px}
+  .badge{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:#fff;background:var(--primary);padding:6px 10px;border-radius:999px}
+  .slide h3{margin:8px 0 6px}
+  .slide p{color:var(--muted);margin:0 0 6px;font-size:15px}
+  .dots{display:flex;gap:6px;justify-content:center;margin-top:8px}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--line)}
+  .dot.active{background:linear-gradient(135deg,var(--primary),var(--primary-2))}
+  .ctrl{position:absolute;inset:0;display:flex;justify-content:space-between;align-items:center;pointer-events:none}
+  .ctrl button{
+    pointer-events:auto;border:none;background:rgba(0,0,0,.03);color:var(--ink);
+    width:38px;height:38px;border-radius:12px;display:grid;place-items:center;transition:background .2s
+  }
+  .ctrl button:active{transform:scale(.98)}
+  :root[data-theme="dark"] .ctrl button{background:rgba(255,255,255,.06)}
+
+  /* ===== Plans ===== */
+  .plans{display:grid;grid-template-columns:1fr;gap:12px}
+  .plan .head{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+  .plan ul{margin:8px 0 0;padding-left:18px;line-height:1.6;color:var(--muted)}
+
+  /* ===== About ===== */
+  .about{display:grid;grid-template-columns:1fr;gap:14px;align-items:center}
+  .about img{border-radius:16px;box-shadow:var(--shadow)}
+  .about .bio{background:var(--paper);border:1px solid var(--line);padding:14px;border-radius:var(--radius)}
+
+  /* ===== FAQ ===== */
+  details{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:12px}
+  details+details{margin-top:8px}
+  summary{cursor:pointer;font-weight:700}
+
+  /* ===== Contact ===== */
+  .contact{display:grid;grid-template-columns:1fr;gap:12px;align-items:center}
+  .contact .block{background:var(--paper);border:1px solid var(--line);padding:14px;border-radius:var(--radius)}
+  .schedule{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .schedule div{background:rgba(0,0,0,.03);border:1px solid var(--line);border-radius:12px;padding:8px;text-align:center}
+  :root[data-theme="dark"] .schedule div{background:rgba(255,255,255,.06)}
+
+  /* ===== Footer ===== */
+  footer{padding:18px 0;border-top:1px solid var(--line);color:var(--muted);font-size:14px;text-align:center}
+
+  /* ===== WhatsApp sticky ===== */
+  .wa{
+    position:fixed;right:16px;bottom:16px;z-index:60;display:flex;align-items:center;gap:8px;
+    background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;padding:12px 14px;border-radius:999px;
+    box-shadow:0 10px 30px rgba(18,140,126,.45);font-weight:800
+  }
+  .wa svg{width:18px;height:18px}
+
+  /* ===== Reveal animations ===== */
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.show{opacity:1;transform:none}
+  @keyframes floatY{from{transform:translateY(0)}50%{transform:translateY(-6px)}to{transform:translateY(0)}}
+  .float{animation:floatY 4s ease-in-out infinite}
+
+  /* ===== Responsive ===== */
+  @media (min-width:900px){
+    .hero{grid-template-columns:1.1fr .9fr;padding:36px 0}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .plans{grid-template-columns:repeat(4,1fr)}
+    .about{grid-template-columns:.9fr 1.1fr}
+    .contact{grid-template-columns:1.1fr .9fr}
+    .slide{grid-template-columns:1.1fr .9fr}
+    .slide img{height:260px}
+  }
+
+  /* Motion preferencia */
+  @media (prefers-reduced-motion: reduce){
+    .track{transition:none}
+    .reveal{transition:none}
+  }
+</style>
+</head>
+<body id="top">
+<header class="site-header" id="siteHeader">
+  <div class="container nav">
+    <a class="brand" href="#top" aria-label="BM Tax Consulting, inicio">
+      <img src="https://i.postimg.cc/6QvCDd0k/BM-tax.jpg" alt="Logo BM Tax Consulting" loading="lazy">
+      <span class="brand__text"><b>BM</b> <span>Tax Consulting</span></span>
+    </a>
+
+    <!-- Acciones en UNA línea (mejor en móvil): Horario · Modo noche · Cotizar -->
+    <nav class="nav__actions">
+      <a class="btn btn--ghost btn--pill" href="#contacto" aria-label="Ver horario">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.75a10.25 10.25 0 1 0 0 20.5 10.25 10.25 0 0 0 0-20.5Zm0 18.5a8.25 8.25 0 1 1 0-16.5 8.25 8.25 0 0 1 0 16.5Zm.75-12.25a.75.75 0 0 0-1.5 0v4.5c0 .2.08.39.22.53l2.75 2.75a.75.75 0 1 0 1.06-1.06l-2.53-2.53V8z"/></svg>
+        <span>Horario</span>
+      </a>
+
+      <button id="themeToggle" class="btn btn--ghost btn--icon" aria-label="Cambiar tema">🌓</button>
+
+      <a class="btn btn--cta flex-1" href="https://wa.me/18097735565" target="_blank" rel="noopener" aria-label="Cotizar por WhatsApp">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.52 3.48A11.93 11.93 0 0 0 12.05 0C5.46.03.11 5.38.13 11.97c0 2.11.55 4.08 1.52 5.8L0 24l6.39-1.64a12 12 0 0 0 5.66 1.45h.01c6.59 0 11.94-5.35 11.95-11.94A11.9 11.9 0 0 0 20.52 3.48ZM12.06 22a9.96 9.96 0 0 1-5.08-1.4l-.36-.21-3.79.97 1.01-3.69-.24-.38A10 10 0 1 1 22.06 12 10 10 0 0 1 12.06 22Z"/></svg>
+        <span class="cta__label">Cotizar</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section id="inicio" class="container hero">
+  <div>
+    <span class="pill reveal">Asesoría fiscal · Contabilidad · Cumplimiento DGII</span>
+    <h1 class="reveal" style="transition-delay:.08s">Haz de tus finanzas y tributos <span style="color:var(--primary)">tu ventaja competitiva</span>.</h1>
+    <p class="lead reveal" style="transition-delay:.16s">Asesoría fiscal, contabilidad y cumplimiento tributario para personas físicas, jurídicas, profesionales independientes y emprendedores en República Dominicana. Te ayudamos a optimizar tu carga impositiva y mantenerte al día con la DGII con seguridad y confianza.</p>
+    <div class="hero-actions reveal" style="transition-delay:.24s">
+      <a class="btn btn--cta" href="https://wa.me/18097735565" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.93 11.93 0 0 0 12.05 0C5.46.03.11 5.38.13 11.97c0 2.11.55 4.08 1.52 5.8L0 24l6.39-1.64a12 12 0 0 0 5.66 1.45h.01c6.59 0 11.94-5.35 11.95-11.94A11.9 11.9 0 0 0 20.52 3.48ZM12.06 22a9.96 9.96 0 0 1-5.08-1.4l-.36-.21-3.79.97 1.01-3.69-.24-.38A10 10 0 1 1 22.06 12 10 10 0 0 1 12.06 22Z"/></svg>
+        Cotizar por WhatsApp
+      </a>
+      <a class="btn btn--ghost" href="#servicios">Ver servicios</a>
+    </div>
+  </div>
+  <div class="hero-card float">
+    <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Equipo contable trabajando" loading="lazy">
+    <div class="muted" style="font-size:14px;margin-top:8px">“La claridad financiera impulsa decisiones inteligentes.”</div>
+  </div>
+</section>
+
+<!-- ===== BENEFICIOS ===== -->
+<section id="beneficios" class="container">
+  <div class="section-title">
+    <h2 class="reveal">Beneficios para tu negocio</h2>
+    <p class="muted reveal">Ahorra tiempo, evita contingencias y toma decisiones con datos reales.</p>
+  </div>
+  <div class="grid-3">
+    <div class="card reveal"><h3>Cumplimiento total</h3><p class="muted">Declaraciones en orden (ITBIS, ISR, retenciones, TSS) y envíos DGII puntuales para evitar multas.</p></div>
+    <div class="card reveal"><h3>Acompañamiento experto</h3><p class="muted">Asesoría cercana, estratégica y enfocada en tu realidad fiscal y financiera.</p></div>
+    <div class="card reveal"><h3>Decisiones informadas</h3><p class="muted">Reportes y estados financieros que hablan claro de tu negocio.</p></div>
+    <div class="card reveal"><h3>Eficiencia operativa</h3><p class="muted">Procesos estandarizados que reducen errores y costos administrativos.</p></div>
+    <div class="card reveal"><h3>Tranquilidad financiera</h3><p class="muted">Simulaciones y cálculos preliminares que evitan sorpresas al cierre.</p></div>
+  </div>
+</section>
+
+<!-- ===== SERVICIOS (CARRUSEL MEJORADO) ===== -->
+<section id="servicios" class="container">
+  <div class="section-title">
+    <h2 class="reveal">Servicios</h2>
+    <p class="muted reveal">Soluciones fiscales y contables diseñadas para cada etapa de tu negocio.</p>
+  </div>
+  <div class="carousel-wrap reveal">
+    <div class="carousel" id="carousel">
+      <div class="track" id="track">
+        <!-- Slides reales (JS añadirá clones para el loop) -->
+        <article class="slide">
+          <img src="https://images.pexels.com/photos/669619/pexels-photo-669619.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Declaraciones mensuales e informes" loading="lazy">
+          <div>
+            <span class="badge">Declaraciones</span>
+            <h3>Declaraciones mensuales de impuestos</h3>
+            <p>ITBIS, TSS, ISR y retenciones; formatos DGII 606, 607, 608, 609, 623, 629. Envíos correctos y a tiempo para evitar multas y recargos.</p>
+            <p class="muted"><b>Precio:</b> A cotizar</p>
+          </div>
+        </article>
+
+        <article class="slide">
+          <img src="https://images.pexels.com/photos/4386370/pexels-photo-4386370.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="ISR anual" loading="lazy">
+          <div>
+            <span class="badge">Fiscal</span>
+            <h3>Cálculo y presentación de ISR (anual)</h3>
+            <p>Declaración anual precisa con revisión de soportes y conciliaciones.</p>
+            <p class="muted"><b>Precio:</b> A cotizar</p>
+          </div>
+        </article>
+
+        <article class="slide">
+          <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Análisis fiscal estratégico" loading="lazy">
+          <div>
+            <span class="badge">Estrategia</span>
+            <h3>Análisis fiscal estratégico</h3>
+            <p>Diagnóstico integral para detectar errores, riesgos y oportunidades; plan de acción impositivo.</p>
+            <p class="muted"><b>Precio:</b> A cotizar</p>
+          </div>
+        </article>
+
+        <article class="slide">
+          <img src="https://images.pexels.com/photos/4064037/pexels-photo-4064037.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Régimen Simplificado de Tributación" loading="lazy">
+          <div>
+            <span class="badge">RST</span>
+            <h3>Régimen Simplificado de Tributación (RST)</h3>
+            <p>Inscripción y seguimiento para simplificar obligaciones y optimizar carga impositiva.</p>
+            <p class="muted"><b>Precio:</b> A cotizar</p>
+          </div>
+        </article>
+
+        <article class="slide">
+          <img src="https://images.pexels.com/photos/267507/pexels-photo-267507.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Venta de inmuebles" loading="lazy">
+          <div>
+            <span class="badge">Inmuebles</span>
+            <h3>Cálculos por venta de inmuebles</h3>
+            <p>Determinación de impuestos aplicables a la transferencia de bienes inmuebles, estimación de costos y pasos formales.</p>
+            <p class="muted"><b>Precio:</b> A cotizar</p>
+          </div>
+        </article>
+
+        <article class="slide">
+          <img src="https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Cálculos preliminares de ISR" loading="lazy">
+          <div>
+            <span class="badge">Simulación</span>
+            <h3>Cálculos preliminares de Impuesto sobre la Renta</h3>
+            <p>Simulaciones antes de cierre fiscal para anticipar flujo, provisiones y escenarios.</p>
+            <p class="muted"><b>Precio:</b> A cotizar</p>
+          </div>
+        </article>
+
+        <article class="slide">
+          <img src="https://images.pexels.com/photos/6476587/pexels-photo-6476587.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Cese de operaciones" loading="lazy">
+          <div>
+            <span class="badge">Gestión</span>
+            <h3>Cese de operaciones</h3>
+            <p>Gestión integral del cierre formal ante DGII y entidades relacionadas: requisitos, declaraciones finales y baja de obligaciones.</p>
+            <p class="muted"><b>Precio:</b> A cotizar</p>
+          </div>
+        </article>
+
+        <article class="slide">
+          <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Actualización de impuestos" loading="lazy">
+          <div>
+            <span class="badge">Regularización</span>
+            <h3>Actualización de impuestos</h3>
+            <p>Regularización de declaraciones omitidas, rectificativas y conciliaciones con DGII.</p>
+            <p class="muted"><b>Precio:</b> A cotizar</p>
+          </div>
+        </article>
+
+        <article class="slide">
+          <img src="https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Contabilidad mensual" loading="lazy">
+          <div>
+            <span class="badge">Contabilidad</span>
+            <h3>Contabilidad mensual y asesoría financiera</h3>
+            <p>Registro, análisis y reportes mensuales para decisiones basadas en datos.</p>
+            <p class="muted"><b>Precio:</b> Planes disponibles</p>
+          </div>
+        </article>
+
+        <article class="slide">
+          <img src="https://images.pexels.com/photos/4386372/pexels-photo-4386372.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Estados financieros" loading="lazy">
+          <div>
+            <span class="badge">EEFF</span>
+            <h3>Preparación de Estados Financieros</h3>
+            <p>EEFF completos: Balance General, Estado de Resultados, Flujo de Efectivo y notas técnicas.</p>
+            <p class="muted"><b>Precio:</b> A cotizar</p>
+          </div>
+        </article>
+
+        <article class="slide">
+          <img src="https://images.pexels.com/photos/210990/pexels-photo-210990.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Informe financiero" loading="lazy">
+          <div>
+            <span class="badge">Gerencial</span>
+            <h3>Informe financiero para toma de decisiones</h3>
+            <p>KPIs, tendencias, márgenes, flujo y recomendaciones accionables para la dirección.</p>
+            <p class="muted"><b>Precio:</b> A cotizar</p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="ctrl">
+      <button id="prev" aria-label="Anterior">◀</button>
+      <button id="next" aria-label="Siguiente">▶</button>
+    </div>
+    <div class="dots" id="dots" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- ===== PLANES ===== -->
+<section id="planes" class="container">
+  <div class="section-title">
+    <h2 class="reveal">Igualas que se adaptan a ti</h2>
+    <p class="muted reveal">Acompañamiento continuo con alcance claro. <b>Precios a cotizar.</b></p>
+  </div>
+  <div class="plans">
+    <div class="card plan reveal">
+      <div class="head"><span class="badge">Emprendedor</span><h3>Plan Emprendedor</h3></div>
+      <ul>
+        <li>Contabilidad básica mensual (ingresos/gastos)</li>
+        <li>Envío de formatos DGII básicos (606/607/608/609 si aplican)</li>
+        <li>Asesoría mensual breve (hasta 1 sesión)</li>
+        <li>Checklist fiscal inicial y calendario de obligaciones</li>
+      </ul>
+    </div>
+    <div class="card plan reveal">
+      <div class="head"><span class="badge">Profesional</span><h3>Plan Profesional</h3></div>
+      <ul>
+        <li>Contabilidad mensual completa</li>
+        <li>Declaraciones mensuales (ITBIS/retenciones/TSS si aplican)</li>
+        <li>Informe gerencial trimestral</li>
+        <li>Soporte para RST o régimen correspondiente</li>
+      </ul>
+    </div>
+    <div class="card plan reveal">
+      <div class="head"><span class="badge">Fiscal</span><h3>Plan Fiscal</h3></div>
+      <ul>
+        <li>Declaraciones y formatos DGII (mes/año)</li>
+        <li>Análisis fiscal estratégico semestral</li>
+        <li>Cálculos preliminares ISR antes de cierre</li>
+        <li>Acompañamiento en fiscalizaciones y requerimientos</li>
+      </ul>
+    </div>
+    <div class="card plan reveal">
+      <div class="head"><span class="badge">Financiero</span><h3>Plan Financiero</h3></div>
+      <ul>
+        <li>Estados financieros periódicos</li>
+        <li>Informe financiero para decisiones (KPIs, márgenes, flujo)</li>
+        <li>Reunión mensual ejecutiva</li>
+        <li>Proyecciones y escenarios básicos</li>
+      </ul>
+    </div>
+  </div>
+  <div style="margin-top:10px" class="reveal">
+    <a class="btn btn--cta" href="https://wa.me/18097735565" target="_blank" rel="noopener">Cotizar por WhatsApp</a>
+  </div>
+</section>
+
+<!-- ===== SOBRE ===== -->
+<section id="sobre" class="container">
+  <div class="section-title">
+    <h2 class="reveal">Conócenos</h2>
+    <p class="muted reveal">Cercanía, rigurosidad y enfoque en resultados.</p>
+  </div>
+  <div class="about">
+    <img class="reveal" style="aspect-ratio:4/3;object-fit:cover"
+         src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1200"
+         alt="Equipo de BM Tax Consulting" loading="lazy">
+    <div class="bio reveal">
+      <p><b>BM Tax Consulting</b> nace con el propósito de simplificar la contabilidad y el cumplimiento tributario para que emprendedores, profesionales y empresas puedan enfocarse en crecer. Combinamos asesoría fiscal estratégica con una contabilidad clara y oportuna, alineada a las exigencias de la DGII y a las metas financieras de cada cliente.</p>
+      <p><b>Fundadora:</b> Brenda Mejía — Consultora Fiscal.</p>
+      <div class="hero-actions"><a class="btn btn--cta" href="https://wa.me/18097735565" target="_blank" rel="noopener">Hablemos por WhatsApp</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIOS ===== -->
+<section id="testimonios" class="container">
+  <div class="section-title">
+    <h2 class="reveal">Testimonios</h2>
+    <p class="muted reveal">Confianza basada en resultados.</p>
+  </div>
+  <div class="grid-3">
+    <div class="card reveal">
+      <h3>María G., Emprendedora</h3>
+      <p class="muted">“Empecé con el plan Emprendedor y dejé de sufrir con mis declaraciones. Ahora sé cuánto gano de verdad.”</p>
+    </div>
+    <div class="card reveal">
+      <h3>Luis P., Profesional independiente</h3>
+      <p class="muted">“El informe financiero mensual me cambió la forma de decidir. Veo márgenes y flujo a simple vista.”</p>
+    </div>
+    <div class="card reveal">
+      <h3>Innova SRL</h3>
+      <p class="muted">“Nos corrigieron omisiones, nos pusimos al día con DGII y hoy operamos sin sobresaltos.”</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq" class="container">
+  <div class="section-title">
+    <h2 class="reveal">Preguntas frecuentes</h2>
+    <p class="muted reveal">Transparencia y claridad para comenzar sin dudas.</p>
+  </div>
+  <details class="reveal"><summary>¿Trabajan con personas físicas y jurídicas?</summary><p>Sí, atendemos personas físicas, jurídicas, profesionales independientes y emprendedores.</p></details>
+  <details class="reveal"><summary>¿Apoyan con RST?</summary><p>Sí, asesoramos e inscribimos, además del seguimiento.</p></details>
+  <details class="reveal"><summary>¿Manejan los formatos DGII (606/607/608/609/623/629)?</summary><p>Sí, preparamos y enviamos correctamente y a tiempo.</p></details>
+  <details class="reveal"><summary>¿Pueden ayudarme si estoy atrasado con la DGII?</summary><p>Sí, a través del servicio de <b>Actualización de impuestos</b> (regularizaciones y rectificativas).</p></details>
+  <details class="reveal"><summary>¿Hacen cálculos por venta de inmuebles?</summary><p>Sí, estimamos los impuestos aplicables y definimos los pasos formales.</p></details>
+  <details class="reveal"><summary>¿Preparan Estados Financieros y reportes gerenciales?</summary><p>Sí, elaboramos EEFF y <b>Informes financieros para decisiones</b>.</p></details>
+  <details class="reveal"><summary>¿Ofrecen igualas mensuales?</summary><p>Sí, con planes Emprendedor, Profesional, Fiscal y Financiero.</p></details>
+  <details class="reveal"><summary>¿Cuál es el horario de atención?</summary><p>Lunes a viernes, 9:00 a.m. – 6:00 p.m.</p></details>
+</section>
+
+<!-- ===== CONTACTO ===== -->
+<section id="contacto" class="container">
+  <div class="section-title">
+    <h2 class="reveal">Contacto</h2>
+    <p class="muted reveal">Estamos listos para ayudarte.</p>
+  </div>
+  <div class="contact">
+    <div class="block reveal">
+      <h3>Escríbenos</h3>
+      <p class="muted">WhatsApp oficial</p>
+      <a class="btn btn--cta" href="https://wa.me/18097735565" target="_blank" rel="noopener">(+1) 809 773 5565</a>
+      <p class="muted" style="margin-top:10px"><b>Email:</b> <a href="mailto:BM.taxconsulting1@gmail.com">BM.taxconsulting1@gmail.com</a></p>
+      <p class="muted"><b>Instagram:</b> <a href="https://instagram.com/BM_taxconsulting" target="_blank" rel="noopener">@BM_taxconsulting</a></p>
+    </div>
+    <div class="block reveal">
+      <h3>Horario</h3>
+      <div class="schedule">
+        <div><b>L–V</b><br>9:00 am – 6:00 pm</div>
+        <div><b>S–D</b><br>Cerrado</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    © <span id="y"></span> BM Tax Consulting · Asesoría Fiscal, Contabilidad y Cumplimiento DGII
+  </div>
+</footer>
+
+<!-- ===== WhatsApp Sticky ===== -->
+<a class="wa" href="https://wa.me/18097735565" target="_blank" rel="noopener" aria-label="Cotizar por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.93 11.93 0 0 0 12.05 0C5.46.03.11 5.38.13 11.97c0 2.11.55 4.08 1.52 5.8L0 24l6.39-1.64a12 12 0 0 0 5.66 1.45h.01c6.59 0 11.94-5.35 11.95-11.94A11.9 11.9 0 0 0 20.52 3.48ZM12.06 22a9.96 9.96 0 0 1-5.08-1.4l-.36-.21-3.79.97 1.01-3.69-.24-.38A10 10 0 1 1 22.06 12 10 10 0 0 1 12.06 22Z"/></svg>
+  Cotizar
+</a>
+
+<script>
+  // Año footer
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  // ===== Tema claro/oscuro con persistencia =====
+  const root = document.documentElement;
+  const saved = localStorage.getItem('bm-theme');
+  if(saved){ root.setAttribute('data-theme', saved); }
+  document.getElementById('themeToggle').addEventListener('click', ()=>{
+    const t = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', t);
+    localStorage.setItem('bm-theme', t);
+  });
+
+  // ===== Reveal on scroll =====
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); }
+    })
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // ===== Carrusel circular MEJORADO =====
+  const track = document.getElementById('track');
+  const carousel = document.getElementById('carousel');
+  let slides = Array.from(track.children);
+  const baseTotal = slides.length;
+
+  // Clones para loop infinito
+  const firstClone = slides[0].cloneNode(true);
+  const lastClone  = slides[baseTotal-1].cloneNode(true);
+  track.appendChild(firstClone);
+  track.insertBefore(lastClone, slides[0]);
+
+  let index = 1; // primer real
+  let w = () => carousel.getBoundingClientRect().width; // ancho actual del carrusel
+  const setPos = ()=> track.style.transform = `translateX(-${index * w()}px)`;
+
+  // Forzar ancho consistente de cada slide al tamaño del carrusel (fluidez)
+  const setSlideWidths = ()=>{
+    const width = w();
+    Array.from(track.children).forEach(s=> s.style.minWidth = width + 'px');
+    setPos();
+  }
+  setSlideWidths();
+  window.addEventListener('resize', setSlideWidths, {passive:true});
+
+  // Dots dinámicos
+  const dots = document.getElementById('dots');
+  for(let i=0;i<baseTotal;i++){
+    const d=document.createElement('span'); d.className='dot'+(i===0?' active':'');
+    d.addEventListener('click',()=>{ stop(); goTo(i+1); start(); });
+    dots.appendChild(d);
+  }
+  const dotEls = Array.from(dots.children);
+  const activeDot = ()=> {
+    dotEls.forEach(d=>d.classList.remove('active'));
+    dotEls[(index-1+baseTotal)%baseTotal].classList.add('active');
+  };
+
+  // Transición proporcional a distancia (se siente más fluida)
+  const goTo = (i)=>{
+    const dist = Math.abs(i - index);
+    track.style.transition = `transform ${Math.min(.65, .35 + dist*0.15)}s cubic-bezier(.22,.61,.36,1)`;
+    index=i; setPos();
+  };
+  const next = ()=> goTo(index+1);
+  const prev = ()=> goTo(index-1);
+  document.getElementById('next').addEventListener('click', ()=>{ stop(); next(); start(); });
+  document.getElementById('prev').addEventListener('click', ()=>{ stop(); prev(); start(); });
+
+  // Corrección al finalizar transición (saltos de clones)
+  track.addEventListener('transitionend', ()=>{
+    const items = track.children;
+    if(items[index].isSameNode(items[items.length-1])){ // clone del primero
+      track.style.transition='none'; index=1; setPos();
+      requestAnimationFrame(()=> track.style.transition = 'transform .6s cubic-bezier(.22,.61,.36,1)');
+    }
+    if(items[index].isSameNode(items[0])){ // clone del último
+      track.style.transition='none'; index=baseTotal; setPos();
+      requestAnimationFrame(()=> track.style.transition = 'transform .6s cubic-bezier(.22,.61,.36,1)');
+    }
+    activeDot();
+  });
+
+  // Autoplay con pausa inteligente
+  let timer; let autoDelay = 2600; // ligeramente más rápido y suave
+  const start = ()=> timer = setInterval(next, autoDelay);
+  const stop  = ()=> { if(timer) clearInterval(timer); };
+  start();
+  document.addEventListener('visibilitychange', ()=>{ document.hidden ? stop() : start(); });
+
+  // Drag (tacto + mouse) más suave
+  let startX=0, dx=0, dragging=false;
+  const onPointerDown = (e)=>{ dragging=true; startX=(e.clientX|| (e.touches&&e.touches[0].clientX) || 0); stop(); carousel.style.cursor='grabbing'; };
+  const onPointerMove = (e)=>{
+    if(!dragging) return;
+    const clientX = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+    dx = clientX - startX;
+    track.style.transition='none';
+    track.style.transform=`translateX(calc(-${index*w()}px + ${dx}px))`;
+  };
+  const onPointerUp = ()=>{
+    if(!dragging) return; dragging=false; carousel.style.cursor='';
+    track.style.transition='transform .55s cubic-bezier(.22,.61,.36,1)';
+    if(Math.abs(dx) > 40){ dx>0 ? prev() : next(); } else { setPos(); }
+    dx=0; start();
+  };
+  carousel.addEventListener('pointerdown', onPointerDown);
+  window.addEventListener('pointermove', onPointerMove, {passive:true});
+  window.addEventListener('pointerup', onPointerUp, {passive:true});
+  carousel.addEventListener('touchstart', onPointerDown, {passive:true});
+  window.addEventListener('touchmove', onPointerMove, {passive:true});
+  window.addEventListener('touchend', onPointerUp, {passive:true});
+
+  // Sombra header al hacer scroll
+  const hdr = document.getElementById('siteHeader');
+  const onScrollHdr = ()=> { if (window.scrollY > 6) hdr.classList.add('is-scrolled'); else hdr.classList.remove('is-scrolled'); };
+  onScrollHdr();
+  window.addEventListener('scroll', onScrollHdr, {passive:true});
+</script>
+
+
+<!-- ===== Chatbot flotante (BM) ===== -->
+<style>
+  .chat-fab{position:fixed;right:16px;bottom:calc(env(safe-area-inset-bottom) + 76px + var(--kb,0px));z-index:80;display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border:none;border-radius:999px;box-shadow:var(--shadow-2);background:linear-gradient(135deg,var(--primary),var(--primary-2));color:#fff;cursor:pointer}
+  .chat-fab svg{width:22px;height:22px}
+
+  .chatbox{position:fixed;right:16px;bottom:calc(env(safe-area-inset-bottom) + 255px + var(--kb,0px));z-index:80;width:min(92vw,380px);height:min(74dvh, 300px); max-height: calc(100dvh - 132px - var(--kb,0px) - env(safe-area-inset-bottom));background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 44px rgba(0,0,0,.22);display:flex;flex-direction:column;overflow:hidden;transform:translateY(12px);opacity:0;pointer-events:none;transition:opacity .25s var(--trans), transform .25s var(--trans)}
+  .chatbox.open{opacity:1;transform:none;pointer-events:auto}
+  .chatbox__head{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 12px;background:linear-gradient(135deg,var(--primary),var(--primary-2));color:#fff}
+  .chatbox__title{font-weight:800}
+  .chatbox__close{border:none;background:rgba(255,255,255,.15);color:#fff;width:32px;height:32px;border-radius:10px;cursor:pointer}
+
+  .chatbox__body{flex:1;padding:12px;overflow:auto;display:flex;flex-direction:column;gap:8px;background:var(--bg)}
+  .msg{max-width:86%;padding:8px 12px;border-radius:14px;word-wrap:break-word;line-height:1.35;font-size:14px;box-shadow:var(--shadow)}
+  .msg.bot{align-self:flex-start;background:var(--paper);border:1px solid var(--line)}
+  .msg.user{align-self:flex-end;background:linear-gradient(135deg,var(--primary),var(--primary-2));color:#fff}
+
+  .chatbox__input{display:flex;gap:8px;padding:10px;border-top:1px solid var(--line);background:var(--paper)}
+  .chatbox__input input{flex:1;padding:10px 12px;border:1px solid var(--line);border-radius:999px;background:var(--bg);color:inherit;outline:none;font-size:16px;line-height:1.4;-webkit-text-size-adjust:100%;}
+  .chatbox__input button{padding:10px 16px;border:none;border-radius:999px;background:linear-gradient(135deg,var(--primary),var(--primary-2));color:#fff;font-weight:800;cursor:pointer;font-size:16px;}
+
+  @media (max-width:420px){
+  .chatbox{
+    left:12px;
+    right:12px;
+    width:auto;
+    height:40vh;
+    max-height:calc(160dvh - 10px - var(--kb,0px));
+  }
+}
+
+</style>
+
+<button id="chatFab" class="chat-fab" aria-label="Abrir chat de BM">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2Zm2 5h12v2H6V9Zm0 4h8v2H6v-2Z"/></svg>
+</button>
+
+<div id="chatWidget" class="chatbox" aria-live="polite" hidden>
+  <div class="chatbox__head">
+    <div class="chatbox__title">Asistente BM</div>
+    <button id="chatClose" class="chatbox__close" aria-label="Cerrar">✕</button>
+  </div>
+  <div id="chatArea" class="chatbox__body"></div>
+  <form id="chatForm" class="chatbox__input">
+    <input id="chatInput" type="text" placeholder="Escribe tu mensaje…" autocomplete="off"/>
+    <button type="submit">Enviar</button>
+  </form>
+</div>
+
+<script>
+  // Toggle
+  const chatFab = document.getElementById('chatFab');
+  const chatBox = document.getElementById('chatWidget');
+  const chatArea = document.getElementById('chatArea');
+  const chatForm = document.getElementById('chatForm');
+  const chatInput = document.getElementById('chatInput');
+  const chatClose = document.getElementById('chatClose');
+
+  function openChat(){ chatBox.hidden=false; chatBox.classList.add('open'); chatInput.focus(); }
+  function closeChat(){ chatBox.classList.remove('open'); setTimeout(()=> chatBox.hidden=true, 200); }
+  chatFab.addEventListener('click', openChat);
+  chatClose.addEventListener('click', closeChat);
+
+  // Persistencia de sesión por 24h
+  function getSessionId() {
+    const stored = localStorage.getItem('bmChatSession');
+    const now = Date.now();
+    if (stored) {
+      const session = JSON.parse(stored);
+      if (now - session.timestamp < 86400000) return session.id;
+    }
+    const newId = 'sess-' + Math.random().toString(36).slice(2, 11) + '-' + now;
+    localStorage.setItem('bmChatSession', JSON.stringify({ id: newId, timestamp: now }));
+    return newId;
+  }
+  const sessionId = getSessionId();
+
+  function appendMsg(text, who){
+  const div = document.createElement('div');
+  div.className = 'msg ' + (who || 'bot');
+  div.textContent = text;
+  chatArea.appendChild(div);
+  chatArea.scrollTop = chatArea.scrollHeight;
+}
+// 👇 añade esta línea para exponer la función globalmente
+window.appendMsg = appendMsg;
+
+
+  async function sendMsg(msg){
+    appendMsg(msg, 'user');
+    try{
+      const resp = await fetch('https://prod-85.westus.logic.azure.com:443/workflows/1298990d721e4900bb0fbf91b8529a7e/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=u_n_gDIEO_NMZBY2V6LTKx4wWg14SSlTbLWwva9qekM',{
+        method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({ message: msg, sessionId })
+      });
+      const data = await resp.json().catch(()=>({}));
+      appendMsg(data.reply || '(Sin respuesta)', 'bot');
+    }catch(e){ appendMsg('Error al conectar con el asistente.', 'bot'); }
+  }
+
+  chatForm.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const val = chatInput.value.trim();
+    if(!val) return; chatInput.value='';
+    sendMsg(val);
+  });
+
+  // Cerrar con ESC
+  window.addEventListener('keydown', (e)=>{ if(e.key==='Escape' && !chatBox.hidden) closeChat(); });
+</script>
+
+<script>
+// ===== Ajustes móviles: evitar zoom del input, chat sobre teclado y conservar histórico =====
+(function(){
+  // Evitar zoom en input en iOS
+  var vp=document.querySelector('meta[name="viewport"]');
+  if(vp && !/maximum-scale/.test(vp.content)) vp.content += ', maximum-scale=1';
+  // Inicializar variable CSS para altura de teclado
+  document.documentElement.style.setProperty('--kb','0px');
+  // VisualViewport para detectar teclado y reposicionar chat por encima
+  var vv = window.visualViewport;
+  function updateKB(){
+    if(!vv) return;
+    var offset = Math.max(0, (window.innerHeight - (vv.height + vv.offsetTop)));
+    document.documentElement.style.setProperty('--kb', offset + 'px');
+  }
+  if(vv){ vv.addEventListener('resize', updateKB); vv.addEventListener('scroll', updateKB); window.addEventListener('resize', updateKB); updateKB(); }
+
+  // Persistencia de historial por sesión
+  var keyBase = 'bmChatHistory';
+  var restoring = true;
+  function saveMsg(text, who){
+    try{
+      var arr = JSON.parse(localStorage.getItem(keyBase)) || [];
+      arr.push({text:text, who:who, t:Date.now()});
+      localStorage.setItem(keyBase, JSON.stringify(arr.slice(-200)));
+    }catch(e){}
+  }
+  var _appendMsg = window.appendMsg; // guardar referencia original
+  if(typeof _appendMsg === 'function'){
+    window.appendMsg = function(text, who){
+      _appendMsg(text, who);
+      if(!restoring) saveMsg(text, who||'bot');
+    };
+    // Restaurar historial al cargar
+    try{
+      var hist = JSON.parse(localStorage.getItem(keyBase)) || [];
+      hist.forEach(function(m){ _appendMsg(m.text, m.who); });
